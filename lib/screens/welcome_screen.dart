@@ -36,10 +36,60 @@ class WelcomeScreen extends StatelessWidget {
               child: Container(
                 color: kblue,
                 child: Container(
+                  width: double.infinity,
                   decoration: const BoxDecoration(
                       color: Colors.white,
                       borderRadius:
                           BorderRadius.only(topLeft: Radius.circular(50))),
+                  child: Padding(
+                    padding: const EdgeInsets.all(25),
+                    child: Column(
+                      children: [
+                        Spacer(),
+                        const Text(
+                            'Learning Everything',
+                          style: TextStyle(
+                            fontSize: 28,
+                            fontWeight: FontWeight.bold
+                          ),
+                        ),
+                        Spacer(),
+                        const Text(
+                            'Learn with pleasure with\nus,where you are!',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            wordSpacing: 2.5,
+                            color: Colors.black54,
+                              height: 1.5,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w700
+                          ),
+                        ),
+                        Spacer(
+                          flex: 3,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            MaterialButton(
+                              height: 60,
+                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+                              color: kpink,
+                              child: const Text(
+                                  'Get Start',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18,
+                                  color: Colors.white
+                                ),
+                              ),
+                                onPressed: (){}
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
               ),
             )
