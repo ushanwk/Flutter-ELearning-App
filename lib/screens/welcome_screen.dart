@@ -7,6 +7,10 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: kblue,
+        toolbarHeight: 5,
+      ),
       body: SafeArea(
         child: Column(
           children: [
@@ -20,7 +24,10 @@ class WelcomeScreen extends StatelessWidget {
                           BorderRadius.only(bottomRight: Radius.circular(50))),
                   child: Column(
                     children: [
-                      Expanded(child: Image.asset("assest/image/welcome.png"))
+                      Image.asset(
+                        'assest/image/welcome.png',
+                        width: 400,
+                      )
                     ],
                   ),
                 )),
