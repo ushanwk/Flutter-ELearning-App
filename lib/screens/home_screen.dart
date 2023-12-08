@@ -129,7 +129,33 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                     ],
-                  )
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                          'Categories',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold
+                        ),
+                      ),
+                      InkWell(
+                        onTap: (){},
+                        child: const Text(
+                          'See All',
+                          style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: kblue
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             )
