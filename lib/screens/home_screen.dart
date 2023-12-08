@@ -1,12 +1,49 @@
+import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:e_learning_app/constants.dart';
 import 'package:e_learning_app/model/product_model.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    int _selectedIndex = 0;
     return Scaffold(
+      bottomNavigationBar: BottomNavyBar(
+        selectedIndex: _selectedIndex,
+        showElevation: true, // use this to remove appBar's elevation
+        onItemSelected: (index) => setState(() {
+          _selectedIndex = index;
+        }),
+        items: [
+          BottomNavyBarItem(
+            icon: Icon(Icons.apps),
+            title: Text('Home'),
+            activeColor: Colors.red,
+          ),
+          BottomNavyBarItem(
+              icon: Icon(Icons.people),
+              title: Text('Users'),
+              activeColor: Colors.purpleAccent
+          ),
+          BottomNavyBarItem(
+              icon: Icon(Icons.message),
+              title: Text('Messages'),
+              activeColor: Colors.pink
+          ),
+          BottomNavyBarItem(
+              icon: Icon(Icons.settings),
+              title: Text('Settings'),
+              activeColor: Colors.blue
+          ),
+        ],
+      ),
       body: SafeArea(
         child: ListView(
           children: [
