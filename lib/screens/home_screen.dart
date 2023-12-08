@@ -80,6 +80,56 @@ class HomeScreen extends StatelessWidget {
                       )
                     ],
                   ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                        decoration: BoxDecoration(
+                          color: kpink,
+                          borderRadius: BorderRadius.circular(10)
+                        ),
+                        child: const Text(
+                            'Top',
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold
+                          ),
+                        ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                        child: const Text(
+                          'Design',
+                          style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold
+                          ),
+                        ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                        child: const Text(
+                          'Marketing',
+                          style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 10),
+                        child: Container(
+                         height: 20,
+                          child: Image.asset('assest/icon/sort.png'),
+                        ),
+                      ),
+                    ],
+                  )
                 ],
               ),
             )
