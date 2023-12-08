@@ -1,14 +1,14 @@
 import 'package:e_learning_app/constants.dart';
+import 'package:e_learning_app/model/product_model.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
+        child: ListView(
           children: [
             Padding(
               padding: const EdgeInsets.all(10),
@@ -156,6 +156,15 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ],
                   ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  GridView.builder(
+                    shrinkWrap: true,
+                    physics: ScrollPhysics(),
+                    itemCount: products.length,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,childAspectRatio: 0.85), itemBuilder: (context,index)=>CategoryCard(product: products[index],)
+                  )
                 ],
               ),
             )
@@ -165,3 +174,32 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
+class CategoryCard extends StatelessWidget {
+  const CategoryCard({super.key, required this.product});
+final Product product;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+        padding: const EdgeInsets.all(10),
+      child: Container(
+        padding: const EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          color: product.color,
+          borderRadius: BorderRadius.circular(15),
+        ),
+        child: Column(
+          children: [
+            Image.asset(product.image,height: 100),
+            const SizedBox(
+              height: 10,
+            ),
+            Text(product.title,style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 17, color: Colors.white),),
+            Text("${product.courses} courses",style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: Colors.white70),),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
