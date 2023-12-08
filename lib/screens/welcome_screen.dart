@@ -1,4 +1,5 @@
 import 'package:e_learning_app/constants.dart';
+import 'package:e_learning_app/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -83,7 +84,9 @@ class WelcomeScreen extends StatelessWidget {
                                   color: Colors.white
                                 ),
                               ),
-                                onPressed: (){}
+                                onPressed: (){
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>const HomeScreen()));
+                                }
                             )
                           ],
                         ),
